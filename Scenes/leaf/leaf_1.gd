@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if theNum == -1:
 		theNum = get_parent().getNum
 		print("cannot find leaf num value. trying again")

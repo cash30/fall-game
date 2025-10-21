@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://miqpqbud0yhb"]
+
+[ext_resource type="Script" uid="uid://b852pgww0x5vi" path="res://Scenes/spawner/spawner.gd" id="1_u4pts"]
+[ext_resource type="PackedScene" uid="uid://dwgw8l3q7vth2" path="res://Scenes/leaf/leaf.tscn" id="2_7jrkt"]
+
+[node name="Spawner" type="Marker2D"]
+script = ExtResource("1_u4pts")
+leaf = ExtResource("2_7jrkt")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwgw8l3q7vth2"]
+
+[ext_resource type="Script" uid="uid://dsv0rdkdypqx4" path="res://Scenes/leaf/Leaf.gd" id="1_lbyte"]
+[ext_resource type="Texture2D" uid="uid://cl2qxygdg4cgx" path="res://Art/Leaf 1.png" id="2_wp8iw"]
+[ext_resource type="Script" uid="uid://clmslovvxkssp" path="res://Scenes/leaf/leaf_1.gd" id="3_3k2ib"]
+[ext_resource type="Texture2D" uid="uid://bkr6xee3uqh6o" path="res://Art/leaf 2.png" id="4_rf887"]
+[ext_resource type="Script" uid="uid://uupjhwfha0pm" path="res://Scenes/leaf/leaf_2.gd" id="5_wp8iw"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lbyte")
+
+[node name="Leaf1" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+texture = ExtResource("2_wp8iw")
+script = ExtResource("3_3k2ib")
+
+[node name="Leaf2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_rf887")
+script = ExtResource("5_wp8iw")

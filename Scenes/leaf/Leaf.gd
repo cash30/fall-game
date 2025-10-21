@@ -1,8 +1,8 @@
 extends Node2D
 var num  : int = randi_range(1, 2)
-var rotationSpeed = randf_range(-10, 10)
+var rotationSpeed = randf_range(-5, 5)
 var fallSpeed = randi_range(20, 110)
-var myScale = randf_range(0.9, 1.2)
+var myScale = randf_range(0.6, 1.2)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rotation_degrees = randi_range(-45, 45)

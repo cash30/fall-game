@@ -4,7 +4,6 @@ const timeBetween = 0.5
 var timer = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var timer = timeBetween
 	pass # Replace with function body.
 
 

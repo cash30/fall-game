@@ -20,5 +20,3 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("leaf"):
 		Globals.playerHealth -=20
-		print ("health is",  Globals.playerHealth)
-	pass # Replace with function body.

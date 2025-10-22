@@ -46,3 +46,10 @@ theme = SubResource("Theme_kln2b")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/fill = SubResource("StyleBoxFlat_rgh2o")
 script = ExtResource("4_pbw6q")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+scale = Vector2(1.0000001, 1.0000001)
+polygon = PackedVector2Array(-274.8, 159.99998, -274.4, -154.2, 274.4, -154.4, 274.59998, 159.99998, 319.99997, 159.99998, 319.99997, -159.99998, -319.99997, -159.99998, -319.99997, 159.99998)

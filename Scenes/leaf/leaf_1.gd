@@ -11,7 +11,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if theNum == -1:
 		theNum = get_parent().getNum
-		print("cannot find leaf num value. trying again")
+		print("cannot find leaf num value. trying again. if this error presists check Leaf.gd, and ensure that this file belongs to a direct child of leaf.gd")
 	if theNum == 1:
 		show()
 	else:

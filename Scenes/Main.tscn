@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://du3w87xcp0i4b"]
+[gd_scene load_steps=9 format=3 uid="uid://du3w87xcp0i4b"]
 
 [ext_resource type="Texture2D" uid="uid://c65pxxmdesuu2" path="res://Art/main scene.png" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://miqpqbud0yhb" path="res://Scenes/spawner/spawner.tscn" id="3_kln2b"]
 [ext_resource type="Script" uid="uid://cpcjquosxlrms" path="res://Scenes/progress_bar.gd" id="4_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://b5xp71mloltyx" path="res://Scenes/player/player.tscn" id="4_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://wh3db7qbn464" path="res://Scenes/loose.tscn" id="5_pbw6q"]
+[ext_resource type="Script" uid="uid://dhg0014jhujuo" path="res://Scenes/loose.gd" id="6_v1gob"]
 
 [sub_resource type="Theme" id="Theme_kln2b"]
 default_font_size = 50
@@ -53,3 +55,8 @@ scale = Vector2(0.9999998, 0.9999998)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 scale = Vector2(1.0000001, 1.0000001)
 polygon = PackedVector2Array(-274.8, 159.99998, -274.4, -154.2, 274.4, -154.4, 274.59998, 159.99998, 319.99997, 159.99998, 319.99997, -159.99998, -319.99997, -159.99998, -319.99997, 159.99998)
+
+[node name="Node2D" parent="." instance=ExtResource("5_pbw6q")]
+position = Vector2(-277.19998, -160.6)
+scale = Vector2(0.479, 0.495)
+script = ExtResource("6_v1gob")

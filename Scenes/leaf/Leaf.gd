@@ -23,3 +23,8 @@ func getNum() -> int:
 	else:# if we can not find num we return an error value (if this function returns -1 theres a problem)
 		return -1
 	
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
+	print("deleting leaf")

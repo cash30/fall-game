@@ -1,9 +1,10 @@
-extends Node
-var playerHealth = 100.0
-var score = 0
+extends RichTextLabel
 
+var score = Globals.score
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	clear()
+	append_text("score: "+ str(score))
 	pass # Replace with function body.
 
 

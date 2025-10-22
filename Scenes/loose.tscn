@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://wh3db7qbn464"]
+[gd_scene load_steps=6 format=3 uid="uid://wh3db7qbn464"]
 
 [ext_resource type="Texture2D" uid="uid://cl2qxygdg4cgx" path="res://Art/Leaf 1.png" id="2_dxq0p"]
+[ext_resource type="Script" uid="uid://bk47wf6hfmj4f" path="res://Scenes/scorecounter.gd" id="2_o87ns"]
 
 [sub_resource type="Theme" id="Theme_dxq0p"]
+
+[sub_resource type="Theme" id="Theme_n03xj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxq0p"]
+bg_color = Color(0.6, 0.6, 0.6, 0.7058824)
 
 [node name="Node2D" type="Node2D"]
 
@@ -47,3 +53,16 @@ texture = ExtResource("2_dxq0p")
 position = Vector2(576.00006, 471)
 scale = Vector2(10, 10)
 texture = ExtResource("2_dxq0p")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 279.0
+offset_top = 232.0
+offset_right = 913.0
+offset_bottom = 347.0
+theme = SubResource("Theme_n03xj")
+theme_override_colors/default_color = Color(0.6706895, 0.6706895, 0.6706895, 1)
+theme_override_font_sizes/normal_font_size = 81
+theme_override_styles/background = SubResource("StyleBoxFlat_dxq0p")
+text = "yo"
+horizontal_alignment = 1
+script = ExtResource("2_o87ns")

@@ -57,6 +57,7 @@ scale = Vector2(1.0000001, 1.0000001)
 polygon = PackedVector2Array(-274.8, 159.99998, -274.4, -154.2, 274.4, -154.4, 274.59998, 159.99998, 319.99997, 159.99998, 319.99997, -159.99998, -319.99997, -159.99998, -319.99997, 159.99998)
 
 [node name="Loose screen" parent="." instance=ExtResource("5_pbw6q")]
+visible = false
 position = Vector2(-277.19998, -160.6)
 scale = Vector2(0.479, 0.495)
 script = ExtResource("6_v1gob")

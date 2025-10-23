@@ -1,11 +1,15 @@
 extends CharacterBody2D
-
+var timer = 1
 
 const SPEED = 100000.0
 const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta: float) -> void:
+	timer -= 1 * delta
+	if timer <= 0 and Globals.playerHealth > 0:
+		Globals.score += 1
+		timer = 1
 
 	if Input.is_action_pressed("left"):
 			velocity.x = -SPEED * delta

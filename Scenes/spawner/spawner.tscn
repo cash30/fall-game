@@ -1,8 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://miqpqbud0yhb"]
+[gd_scene load_steps=5 format=3 uid="uid://miqpqbud0yhb"]
 
 [ext_resource type="Script" uid="uid://b852pgww0x5vi" path="res://Scenes/spawner/spawner.gd" id="1_u4pts"]
 [ext_resource type="PackedScene" uid="uid://dwgw8l3q7vth2" path="res://Scenes/leaf/leaf.tscn" id="2_7jrkt"]
+[ext_resource type="PackedScene" uid="uid://1y1l31tw4ihg" path="res://Scenes/coin/coin.tscn" id="3_m7uwi"]
+[ext_resource type="PackedScene" uid="uid://dljd88nlv8cu2" path="res://Scenes/medkit/med_kit.tscn" id="4_w0kna"]
 
 [node name="Spawner" type="Marker2D"]
 script = ExtResource("1_u4pts")
 leaf = ExtResource("2_7jrkt")
+coin = ExtResource("3_m7uwi")
+medKit = ExtResource("4_w0kna")

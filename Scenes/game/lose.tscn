@@ -68,12 +68,12 @@ offset_bottom = -0.13998413
 size_flags_horizontal = 4
 theme = ExtResource("1_0hroi")
 theme_override_font_sizes/font_size = 96
-text = "0"
+text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_o87ns")
 
-[node name="Label" type="Label" parent="margin"]
+[node name="message" type="Label" parent="margin"]
 layout_mode = 0
 offset_left = 203.0
 offset_top = 296.0

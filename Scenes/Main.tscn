@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://du3w87xcp0i4b"]
+[gd_scene load_steps=10 format=3 uid="uid://du3w87xcp0i4b"]
 
 [ext_resource type="Texture2D" uid="uid://c65pxxmdesuu2" path="res://art/main scene.png" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://b0ahj3vkko7bc" path="res://scenes/sounds/force field.tscn" id="3_c01mt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cpcjquosxlrms" path="res://scripts/UI/health_bar.gd" id="4_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://b5xp71mloltyx" path="res://scenes/player/player.tscn" id="4_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://ba4hnufatd1uf" path="res://scenes/sounds/music.scn" id="5_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://crvnh4q8itnj" path="res://scenes/game/counter.tscn" id="7_nxtc6"]
 
 [sub_resource type="Theme" id="Theme_kln2b"]
 default_font_size = 50
@@ -56,3 +57,7 @@ metadata/_edit_use_anchors_ = true
 polygon = PackedVector2Array(-274.8, 160, -274.4, -154.2, 274.4, -154.4, 274.6, 160, 320, 160, 320, -160, -320, -160, -320, 160)
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("5_vcsgt")]
+
+[node name="Node2D" parent="." instance=ExtResource("7_nxtc6")]
+position = Vector2(197.79999, -143.2)
+scale = Vector2(0.25, 0.25)

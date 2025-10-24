@@ -1,9 +1,9 @@
 extends Node
 
 @export var loseScreen : PackedScene
-
+@export var main : PackedScene
 var playerHealth : float = 100.0
-
+ 
 var score : int = 0
 var hasGameEnded : bool = false
 var isPlayerSafe : bool = false
@@ -22,3 +22,10 @@ func _process(_delta: float) -> void:
 
 func endGame() -> void:
 	get_tree().change_scene_to_packed(loseScreen);
+	
+func restart() -> void:
+	get_tree().change_scene_to_packed(main)
+	playerHealth = 100
+	isPlayerSafe = false
+	hasGameEnded = false
+	score = 0

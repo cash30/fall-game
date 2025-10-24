@@ -8,5 +8,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	text = "Score: "+ str(Globals.score)
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		pass
+	if Globals.hasGameEnded:
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			Globals.restart()

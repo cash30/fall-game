@@ -3,10 +3,10 @@ extends Marker2D
 @export var coin:   PackedScene
 @export var medKit: PackedScene
 @export var forceField: PackedScene
-const timeBetweenLeaf = 0.5
-const timeBetweenCoin = 3
-const timeBetweenMedKit = 5
-const timeBetweenForceField = 7
+var timeBetweenLeaf = 0.5
+var timeBetweenCoin = 4
+var timeBetweenMedKit = 5
+var timeBetweenForceField = 7
 var  timerLeaf = 1
 var timerCoin = 2
 var  timerMedKit = 1
@@ -44,6 +44,7 @@ func shootCoin() -> void:
 	var coinInst = coin.instantiate()
 	coinInst.position.x = offset
 	add_child(coinInst)
+	timeBetweenCoin = randf_range(3, 5)
 	
 func tickShootCoin(delta) -> void:
 	timerCoin -= 1.0 * delta
@@ -58,6 +59,8 @@ func shootMedKit() -> void:
 	var medKitInst = medKit.instantiate()
 	medKitInst.position.x = offset
 	add_child(medKitInst)
+	timeBetweenMedKit = randf_range(4, 6)
+
 		
 func tickShootMedKit(delta) -> void:
 	timerMedKit -= 1.0 * delta
@@ -70,7 +73,9 @@ func shootForceField() -> void:
 	var offset = randi_range(-300, 300)
 	var forceFealdInst = forceField.instantiate()
 	forceFealdInst.position.x = offset
-	add_child(forceFealdInst)
+	add_child(forceFealdInst)	
+	timeBetweenForceField = randf_range(5, 8)
+
 		
 func tickShootForceField(delta) -> void:
 	timerforceField -= 1.0 * delta

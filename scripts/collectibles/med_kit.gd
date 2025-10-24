@@ -14,7 +14,11 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
-		print("medkit collected")
-		Globals.playerHealth += 10
 		queue_free()
+		print("medkit collected")
+		if Globals.playerHealth < 100:
+			if Globals.playerHealth < 30:
+				Globals.playerHealth = 50
+			else:
+				Globals.playerHealth += 20
 	pass # Replace with function body.

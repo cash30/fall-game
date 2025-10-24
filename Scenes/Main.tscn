@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://du3w87xcp0i4b"]
 
 [ext_resource type="Texture2D" uid="uid://c65pxxmdesuu2" path="res://art/main scene.png" id="1_kln2b"]
-[ext_resource type="PackedScene" uid="uid://b0ahj3vkko7bc" path="res://scenes/sounds/force field.tscn" id="3_c01mt"]
+[ext_resource type="PackedScene" uid="uid://b0ahj3vkko7bc" path="res://scenes/collectibles/force field.tscn" id="3_c01mt"]
 [ext_resource type="PackedScene" uid="uid://miqpqbud0yhb" path="res://scenes/game/spawner.tscn" id="3_kln2b"]
 [ext_resource type="Script" uid="uid://cpcjquosxlrms" path="res://scripts/UI/health_bar.gd" id="4_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://b5xp71mloltyx" path="res://scenes/player/player.tscn" id="4_rgh2o"]
@@ -37,7 +37,7 @@ position = Vector2(0, -193.2)
 forceField = ExtResource("3_c01mt")
 
 [node name="player" parent="." instance=ExtResource("4_rgh2o")]
-position = Vector2(-4.47035e-08, 64.2)
+position = Vector2(-2.3841858e-07, 67.6)
 scale = Vector2(0.4, 0.4)
 
 [node name="Health bar" type="ProgressBar" parent="."]
@@ -58,6 +58,6 @@ polygon = PackedVector2Array(-274.8, 160, -274.4, -154.2, 274.4, -154.4, 274.6, 
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("5_vcsgt")]
 
-[node name="Node2D" parent="." instance=ExtResource("7_nxtc6")]
+[node name="counter" parent="." instance=ExtResource("7_nxtc6")]
 position = Vector2(197.79999, -143.2)
 scale = Vector2(0.25, 0.25)

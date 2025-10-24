@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwgw8l3q7vth2"]
+[gd_scene load_steps=7 format=3 uid="uid://dwgw8l3q7vth2"]
 
 [ext_resource type="Script" uid="uid://dsv0rdkdypqx4" path="res://scripts/obstacles/leaf.gd" id="1_pn01r"]
+[ext_resource type="Script" uid="uid://daue6k4op76yo" path="res://scenes/obstacles/collision_polygon_2d.gd" id="2_dh5ce"]
 [ext_resource type="Texture2D" uid="uid://cl2qxygdg4cgx" path="res://art/Leaf 1.png" id="2_r036g"]
 [ext_resource type="Script" uid="uid://clmslovvxkssp" path="res://scripts/obstacles/leaf_1.gd" id="3_dh5ce"]
 [ext_resource type="Texture2D" uid="uid://bkr6xee3uqh6o" path="res://art/leaf 2.png" id="4_s0t0i"]
@@ -11,6 +12,7 @@ script = ExtResource("1_pn01r")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-3, -8, -3, -12, -2, -15, -1, -17, 1, -17, 2, -15, 3, -12, 3, -8, 4, -9, 8, -10, 10, -11, 15, -11, 15, -9, 14, -8, 13, -5, 12, -3, 12, -2, 13, -1, 15, 0, 15, 1, 14, 2, 12, 3, 10, 4, 11, 5, 13, 6, 13, 8, 12, 10, 2, 10, 1, 9, 1, 19, -1, 19, -1, 9, -2, 10, -12, 10, -13, 8, -13, 6, -11, 5, -10, 4, -12, 3, -14, 2, -15, 1, -15, 0, -13, -1, -12, -2, -12, -3, -13, -5, -14, -8, -15, -9, -15, -11, -10, -11, -8, -10, -4, -9)
+script = ExtResource("2_dh5ce")
 
 [node name="Leaf1" type="Sprite2D" parent="."]
 position = Vector2(0, -5)
@@ -23,4 +25,5 @@ script = ExtResource("5_qx6px")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
+[connection signal="area_entered" from="." to="CollisionPolygon2D" method="_on_node_2d_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

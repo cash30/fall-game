@@ -1,35 +1,45 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5xp71mloltyx"]
+[gd_scene load_steps=10 format=3 uid="uid://b5xp71mloltyx"]
 
 [ext_resource type="Script" uid="uid://d0bidymmr1sl6" path="res://scripts/player/player.gd" id="1_eo61r"]
 [ext_resource type="Texture2D" uid="uid://c5d1q33n0tfbr" path="res://art/wow.png" id="2_gmlin"]
 [ext_resource type="Texture2D" uid="uid://da5unxbw807u4" path="res://art/icon.svg" id="2_mxepk"]
 [ext_resource type="Script" uid="uid://cj0hb6t3jldqk" path="res://scripts/player/force-field.gd" id="4_lvxji"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e41v5"]
-radius = 64.0
-height = 128.0
+[ext_resource type="Texture2D" uid="uid://b0rctapw7d2hw" path="res://art/sqrl.png" id="5_p47bc"]
+[ext_resource type="Script" uid="uid://cdquuj4giq1r7" path="res://scenes/player/sqrl.gd" id="6_0owmy"]
+[ext_resource type="Texture2D" uid="uid://c4wkhf3oyth8v" path="res://art/sqrl reversed.png" id="7_qek5x"]
+[ext_resource type="Script" uid="uid://b6ubqxi8tk5mn" path="res://scripts/player/sqrl_reversed.gd" id="8_qek5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo61r"]
-size = Vector2(128, 129)
+size = Vector2(128, 117)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_eo61r")
 
 [node name="Wow" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(5.5, 5.5)
 texture = ExtResource("2_gmlin")
 script = ExtResource("4_lvxji")
 
 [node name="Icon" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_mxepk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_e41v5")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-22, -56, -14, -52, -10, -48, -6, -44, -6, -12, 6, -12, 6, -24, 6, -32, 6, -48, 10, -52, 18, -52, 22, -48, 30, -48, 34, -52, 42, -52, 46, -44, 50, -36, 54, -32, 58, -28, 62, -20, 62, -4, 58, 0, 50, 4, 46, 16, 54, 20, 58, 24, 58, 32, 55, 35, 54, 36, 30, 40, 34, 44, 38, 48, 38, 56, -18, 56, -26, 48, -38, 44, -50, 32, -54, 24, -54, -4, -50, -16, -46, -20, -58, -20, -62, -24, -62, -40, -46, -56)
 
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["player"]]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_eo61r")
+
+[node name="Sqrl" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("5_p47bc")
+script = ExtResource("6_0owmy")
+
+[node name="SqrlReversed" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("7_qek5x")
+script = ExtResource("8_qek5x")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

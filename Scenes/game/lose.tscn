@@ -1,0 +1,112 @@
+[gd_scene load_steps=4 format=3 uid="uid://wh3db7qbn464"]
+
+[ext_resource type="Theme" uid="uid://cku7uyxayn6ch" path="res://art/theme/ghostedText.tres" id="1_0hroi"]
+[ext_resource type="Texture2D" uid="uid://cl2qxygdg4cgx" path="res://art/Leaf 1.png" id="2_dxq0p"]
+[ext_resource type="Script" uid="uid://bk47wf6hfmj4f" path="res://scripts/UI/scorecounter.gd" id="2_o87ns"]
+
+[node name="lose" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="margin" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="banner" type="Label" parent="margin"]
+z_index = 1
+layout_mode = 0
+anchor_left = 0.179
+anchor_top = 0.016
+anchor_right = 0.838
+anchor_bottom = 0.295
+offset_left = 0.371994
+offset_top = -0.0480003
+offset_right = 0.383911
+offset_bottom = -0.26001
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("1_0hroi")
+theme_override_font_sizes/font_size = 128
+text = "🎃LOSER🎃"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bg" type="ColorRect" parent="margin/banner"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.41, 0.23575, 0.1025, 1)
+
+[node name="score" type="Label" parent="margin"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.179
+anchor_top = 0.29500002
+anchor_right = 0.83800006
+anchor_bottom = 0.505
+offset_left = 0.37199402
+offset_top = -0.26000977
+offset_right = 0.3838501
+offset_bottom = -0.13998413
+size_flags_horizontal = 4
+theme = ExtResource("1_0hroi")
+theme_override_font_sizes/font_size = 96
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_o87ns")
+
+[node name="Label" type="Label" parent="margin"]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 296.0
+offset_right = 949.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0.63529414, 0.63529414, 0.63529414, 0.6)
+theme_override_font_sizes/font_size = 30
+text = "Click anywhere to restart"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.630883, 0.351519, 0.0177131, 1)
+
+[node name="Leaf1" type="Sprite2D" parent="."]
+position = Vector2(154, 465)
+rotation = 0.698132
+scale = Vector2(10, 10)
+texture = ExtResource("2_dxq0p")
+
+[node name="Leaf2" type="Sprite2D" parent="."]
+position = Vector2(998, 465)
+rotation = -0.698132
+scale = Vector2(10, 10)
+texture = ExtResource("2_dxq0p")
+
+[node name="Leaf3" type="Sprite2D" parent="."]
+position = Vector2(576, 471)
+scale = Vector2(10, 10)
+texture = ExtResource("2_dxq0p")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://miqpqbud0yhb"]
+
+[ext_resource type="Script" uid="uid://b852pgww0x5vi" path="res://scripts/game/spawner.gd" id="1_u4pts"]
+[ext_resource type="PackedScene" uid="uid://dwgw8l3q7vth2" path="res://scenes/obstacles/leaf.tscn" id="2_7jrkt"]
+[ext_resource type="PackedScene" uid="uid://1y1l31tw4ihg" path="res://scenes/collectibles/coin.tscn" id="3_m7uwi"]
+[ext_resource type="Script" uid="uid://dr5hpy85fns7v" path="res://scripts/collectibles/med_kit.gd" id="4_t4i6e"]
+[ext_resource type="Texture2D" uid="uid://d1nosgykvwsyp" path="res://art/health.png" id="5_4t4hp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2kaw"]
+size = Vector2(16, 16)
+
+[sub_resource type="PackedScene" id="PackedScene_eixug"]
+_bundled = {
+"conn_count": 1,
+"conns": PackedInt32Array(1073741827, 1073741826, 10, 9, 2, 0, 0),
+"editable_instances": [],
+"names": PackedStringArray("medKit", "Area2D", "script", "Health", "Sprite2D", "texture", "CollisionShape2D", "CollisionShape2D", "shape", "_on_area_entered", "area_entered"),
+"node_count": 3,
+"node_paths": [NodePath("."), NodePath("."), NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 1, 5, 1, 0, 1073741825, 0, 7, 6, -1, 1, 8, 2, 0),
+"variants": [ExtResource("4_t4i6e"), ExtResource("5_4t4hp"), SubResource("RectangleShape2D_c2kaw")],
+"version": 3
+}
+
+[node name="Spawner" type="Marker2D"]
+script = ExtResource("1_u4pts")
+leaf = ExtResource("2_7jrkt")
+coin = ExtResource("3_m7uwi")
+medKit = SubResource("PackedScene_eixug")

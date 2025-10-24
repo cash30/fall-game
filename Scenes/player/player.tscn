@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5xp71mloltyx"]
+[gd_scene load_steps=7 format=3 uid="uid://b5xp71mloltyx"]
 
-[ext_resource type="Script" uid="uid://d0bidymmr1sl6" path="res://Scenes/player/player.gd" id="1_eo61r"]
-[ext_resource type="Texture2D" uid="uid://da5unxbw807u4" path="res://Scenes/icon.svg" id="2_mxepk"]
+[ext_resource type="Script" uid="uid://d0bidymmr1sl6" path="res://scripts/player/player.gd" id="1_eo61r"]
+[ext_resource type="Texture2D" uid="uid://c5d1q33n0tfbr" path="res://art/wow.png" id="2_gmlin"]
+[ext_resource type="Texture2D" uid="uid://da5unxbw807u4" path="res://art/icon.svg" id="2_mxepk"]
+[ext_resource type="Script" uid="uid://cj0hb6t3jldqk" path="res://scripts/player/force-field.gd" id="4_lvxji"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e41v5"]
 radius = 64.0
@@ -12,6 +14,11 @@ size = Vector2(128, 129)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_eo61r")
+
+[node name="Wow" type="Sprite2D" parent="."]
+scale = Vector2(5.5, 5.5)
+texture = ExtResource("2_gmlin")
+script = ExtResource("4_lvxji")
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("2_mxepk")

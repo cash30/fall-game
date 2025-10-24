@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4f2vak288fg6"]
+
+[ext_resource type="Script" uid="uid://dr5hpy85fns7v" path="res://scripts/collectibles/med_kit.gd" id="1_u056o"]
+[ext_resource type="Texture2D" uid="uid://d1nosgykvwsyp" path="res://art/health.png" id="2_2ynlg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2kaw"]
+size = Vector2(16, 16)
+
+[node name="medKit" type="Area2D"]
+script = ExtResource("1_u056o")
+
+[node name="Health" type="Sprite2D" parent="."]
+texture = ExtResource("2_2ynlg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c2kaw")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

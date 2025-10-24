@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhiseetyix3wh"]
+
+[ext_resource type="Script" uid="uid://cxa22tjnq2vmb" path="res://scripts/game/Globals.gd" id="1_3txei"]
+[ext_resource type="PackedScene" uid="uid://wh3db7qbn464" path="res://scenes/game/lose.tscn" id="2_0sdfu"]
+
+[node name="Globals" type="Node"]
+script = ExtResource("1_3txei")
+loseScreen = ExtResource("2_0sdfu")

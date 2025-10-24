@@ -11,21 +11,36 @@ config_version=5
 [application]
 
 config/name="fall"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://Scenes/icon.svg"
+config/icon="res://art/icon.svg"
 
 [autoload]
 
-Globals="*res://Globals.gd"
+Globals="*res://scenes/game/globals.tscn"
 
 [display]
 
 window/stretch/mode="viewport"
 
+[dotnet]
+
+project/assembly_name="fall"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "teal",
+"res://art/": "red",
+"res://images/": "gray",
+"res://scenes/": "green",
+"res://scripts/": "yellow",
+"res://sounds/": "blue"
+}
 
 [global_group]
 

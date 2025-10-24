@@ -1,17 +1,17 @@
 [gd_scene load_steps=9 format=3 uid="uid://du3w87xcp0i4b"]
 
-[ext_resource type="Texture2D" uid="uid://c65pxxmdesuu2" path="res://Art/main scene.png" id="1_kln2b"]
-[ext_resource type="PackedScene" uid="uid://miqpqbud0yhb" path="res://Scenes/spawner/spawner.tscn" id="3_kln2b"]
-[ext_resource type="Script" uid="uid://cpcjquosxlrms" path="res://Scenes/progress_bar.gd" id="4_pbw6q"]
-[ext_resource type="PackedScene" uid="uid://b5xp71mloltyx" path="res://Scenes/player/player.tscn" id="4_rgh2o"]
-[ext_resource type="PackedScene" uid="uid://wh3db7qbn464" path="res://Scenes/loose.tscn" id="5_pbw6q"]
-[ext_resource type="Script" uid="uid://dhg0014jhujuo" path="res://Scenes/loose.gd" id="6_v1gob"]
+[ext_resource type="Texture2D" uid="uid://c65pxxmdesuu2" path="res://art/main scene.png" id="1_kln2b"]
+[ext_resource type="PackedScene" uid="uid://b0ahj3vkko7bc" path="res://scenes/sounds/force field.tscn" id="3_c01mt"]
+[ext_resource type="PackedScene" uid="uid://miqpqbud0yhb" path="res://scenes/game/spawner.tscn" id="3_kln2b"]
+[ext_resource type="Script" uid="uid://cpcjquosxlrms" path="res://scripts/UI/health_bar.gd" id="4_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://b5xp71mloltyx" path="res://scenes/player/player.tscn" id="4_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://ba4hnufatd1uf" path="res://scenes/sounds/music.scn" id="5_vcsgt"]
 
 [sub_resource type="Theme" id="Theme_kln2b"]
 default_font_size = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgh2o"]
-bg_color = Color(0.7598691, 0.2016691, 9.62615e-08, 1)
+bg_color = Color(0.759869, 0.201669, 9.62615e-08, 1)
 border_color = Color(0, 0, 0, 1)
 border_blend = true
 corner_radius_top_left = 5
@@ -20,44 +20,39 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="Main" type="Node2D"]
-position = Vector2(2.3841858e-07, 1.1920929e-07)
+position = Vector2(2.38419e-07, 1.19209e-07)
 scale = Vector2(5, 5)
 
 [node name="MainScene" type="Sprite2D" parent="."]
-position = Vector2(-2.9802322e-08, -2.3841835e-08)
+position = Vector2(-2.98023e-08, -2.38418e-08)
 scale = Vector2(5, 5)
 texture = ExtResource("1_kln2b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(0.99999994, 0.99999994)
 zoom = Vector2(0.42, 0.42)
 
 [node name="Spawner" parent="." instance=ExtResource("3_kln2b")]
 position = Vector2(0, -193.2)
+forceField = ExtResource("3_c01mt")
 
 [node name="player" parent="." instance=ExtResource("4_rgh2o")]
-position = Vector2(-4.4703484e-08, 64.2)
+position = Vector2(-4.47035e-08, 64.2)
 scale = Vector2(0.4, 0.4)
 
 [node name="Health bar" type="ProgressBar" parent="."]
 offset_left = -171.2
 offset_top = 98.8
-offset_right = 171.19997
+offset_right = 171.2
 offset_bottom = 130.8
 theme = SubResource("Theme_kln2b")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/fill = SubResource("StyleBoxFlat_rgh2o")
 script = ExtResource("4_pbw6q")
+metadata/_edit_use_anchors_ = true
 
 [node name="Borders" type="StaticBody2D" parent="."]
-scale = Vector2(0.9999998, 0.9999998)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Borders"]
-scale = Vector2(1.0000001, 1.0000001)
-polygon = PackedVector2Array(-274.8, 159.99998, -274.4, -154.2, 274.4, -154.4, 274.59998, 159.99998, 319.99997, 159.99998, 319.99997, -159.99998, -319.99997, -159.99998, -319.99997, 159.99998)
+polygon = PackedVector2Array(-274.8, 160, -274.4, -154.2, 274.4, -154.4, 274.6, 160, 320, 160, 320, -160, -320, -160, -320, 160)
 
-[node name="Loose screen" parent="." instance=ExtResource("5_pbw6q")]
-visible = false
-position = Vector2(-277.19998, -160.6)
-scale = Vector2(0.479, 0.495)
-script = ExtResource("6_v1gob")
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("5_vcsgt")]

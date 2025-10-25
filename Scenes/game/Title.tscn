@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bufo2f10a4nr1"]
+[gd_scene load_steps=5 format=3 uid="uid://bufo2f10a4nr1"]
 
-[ext_resource type="Texture2D" uid="uid://b0rctapw7d2hw" path="res://art/sqrl.png" id="1_8ga2q"]
 [ext_resource type="Script" uid="uid://bjo1vu17333he" path="res://scenes/game/title.gd" id="1_cnipd"]
+[ext_resource type="Texture2D" uid="uid://cqxhdfy3t7k81" path="res://art/coin.png" id="2_m0o03"]
+[ext_resource type="Texture2D" uid="uid://crk56al0rj6et" path="res://art/force field.png" id="3_yxu48"]
+[ext_resource type="Texture2D" uid="uid://d1nosgykvwsyp" path="res://art/health.png" id="4_0qe3u"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,7 +18,97 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.5865332, 0.32466835, 0.0954221, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="Coin" type="ColorRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.098000005
+anchor_top = 0.09900001
+anchor_right = 0.18200001
+anchor_bottom = 0.23
+offset_left = 0.10399628
+offset_top = -29.152008
+offset_right = 0.33598328
+offset_bottom = -29.040009
+scale = Vector2(2, 2)
+color = Color(0.40369365, 0.25614506, 0.16379279, 1)
+
+[node name="Coin" type="Sprite2D" parent="ColorRect/Coin"]
+position = Vector2(48, 53.000004)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("2_m0o03")
+
+[node name="Label" type="Label" parent="ColorRect/Coin"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.41200003
+offset_bottom = -0.020004272
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Coin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Force field" type="ColorRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.098000005
+anchor_top = 0.09900001
+anchor_right = 0.18200001
+anchor_bottom = 0.23
+offset_left = 380.104
+offset_top = -31.152008
+offset_right = 380.336
+offset_bottom = -31.040009
+grow_horizontal = 2
+scale = Vector2(2, 2)
+color = Color(0.40369365, 0.25614506, 0.16379279, 1)
+
+[node name="Coin" type="Sprite2D" parent="ColorRect/Force field"]
+position = Vector2(48, 53.000004)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("3_yxu48")
+
+[node name="Label" type="Label" parent="ColorRect/Force field"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.41200003
+offset_bottom = -0.020004272
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Force Field"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Med kit" type="ColorRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7526042
+anchor_top = 0.047839507
+anchor_right = 0.9210069
+anchor_bottom = 0.3101852
+offset_right = -97.0
+offset_bottom = -85.0
+scale = Vector2(2, 2)
+color = Color(0.40369365, 0.25614506, 0.16379279, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Coin" type="Sprite2D" parent="ColorRect/Med kit"]
+position = Vector2(48, 53.000004)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("4_0qe3u")
+
+[node name="Label" type="Label" parent="ColorRect/Med kit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.41200003
+offset_bottom = -0.020004272
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Med kit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Press anywhere" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -32,7 +124,25 @@ text = "Press anywhere to begin"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sqrl" type="Sprite2D" parent="."]
-position = Vector2(577, 255)
-scale = Vector2(3.9, 3.9)
-texture = ExtResource("1_8ga2q")
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036000002
+anchor_top = 0.38700002
+anchor_right = 0.957
+anchor_bottom = 0.76900005
+offset_left = -0.47200394
+offset_top = 0.22398376
+offset_right = 0.53601074
+offset_bottom = -0.31204224
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6542321, 0.6542321, 0.654232, 1)
+theme_override_font_sizes/font_size = 45
+text = "WASD/arrows to move.
+Dodge the leaves. 
+Doins get you more points. 
+Dorce fields make you become invincible.
+Med kits increase your health."
+horizontal_alignment = 1
+vertical_alignment = 1

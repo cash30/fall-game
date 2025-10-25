@@ -28,9 +28,8 @@ func _process(delta: float) -> void:
 	tickShootForceField(delta)
 	fallSpeedIncreaseTimer += 1 * delta
 	if fallSpeedIncreaseTimer >= 1:
-		print("increasing fall speed")
-		minFallSpeed += 1
-		maxFallSpeed += 1
+		minFallSpeed += 5
+		maxFallSpeed += 5
 		if timeBetweenLeaf > 0.1:
 			timeBetweenLeaf -= 0.005
 		fallSpeedIncreaseTimer = 0

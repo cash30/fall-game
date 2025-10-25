@@ -13,6 +13,7 @@ config_version=5
 config/name="fall"
 run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+run/max_fps=120
 config/icon="res://art/icon.svg"
 
 [autoload]

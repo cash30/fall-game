@@ -11,6 +11,9 @@ var  timerLeaf = 1
 var timerCoin = 2
 var  timerMedKit = 1
 var  timerforceField = 1
+var fallSpeedIncreaseTimer = 0
+var minFallSpeed = 20
+var maxFallSpeed = 110
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,6 +26,15 @@ func _process(delta: float) -> void:
 	tickShootCoin(delta)
 	tickShootMedKit(delta)
 	tickShootForceField(delta)
+	fallSpeedIncreaseTimer += 1 * delta
+	if fallSpeedIncreaseTimer >= 1:
+		print("increasing fall speed")
+		minFallSpeed += 10
+		maxFallSpeed += 10
+		if timeBetweenLeaf > 0.1:
+			timeBetweenLeaf -= 0.01
+		fallSpeedIncreaseTimer = 0
+		pass
 	pass
 
 #leaf
@@ -82,4 +94,9 @@ func tickShootForceField(delta) -> void:
 	if timerforceField <= 0:
 		shootForceField()
 		timerforceField = timeBetweenForceField
-		
+
+func getMinFallSpeed() -> int:
+	return minFallSpeed
+	
+func getMaxFallSpeed() -> int:
+	return maxFallSpeed

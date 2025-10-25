@@ -1,16 +1,20 @@
 extends Node2D
+var fallSpeedIncreaseTimer = 0
 var num  : int = randi_range(1, 2)
 var rotationSpeed = randf_range(-5, 5)
-var fallSpeed = randi_range(20, 110)
 var myScale = randf_range(0.6, 1.2)
+var fallSpeed = 100
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rotation_degrees = randi_range(-45, 45)
-	pass # Replace with function body.
+	var minFallSpeed : int = get_parent().getMinFallSpeed()
+	var maxFallSpeed = get_parent().getMaxFallSpeed()
+	fallSpeed = randi_range(minFallSpeed, maxFallSpeed)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+
 	scale.x = myScale
 	scale.y = myScale
 	rotation += rotationSpeed * delta
@@ -27,3 +31,6 @@ func getNum() -> int:
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
+
+
+	

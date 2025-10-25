@@ -6,6 +6,7 @@ extends Node
 var playerHealth : float = 100.0
  
 var score : int = 0
+var highScore : int = 0
 var hasGameEnded : bool = false
 var isPlayerSafe : bool = false
 var didStart = false

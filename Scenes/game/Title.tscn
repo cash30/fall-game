@@ -5,10 +5,8 @@
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchor_right = 1.667
-anchor_bottom = 1.667
-offset_right = -768.38403
-offset_bottom = -432.21606
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource("1_cnipd")
 
 [node name="ColorRect" type="ColorRect" parent="."]

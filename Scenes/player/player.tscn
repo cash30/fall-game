@@ -39,6 +39,7 @@ texture = ExtResource("5_p47bc")
 script = ExtResource("6_0owmy")
 
 [node name="SqrlReversed" type="Sprite2D" parent="Area2D"]
+visible = false
 texture = ExtResource("7_qek5x")
 script = ExtResource("8_qek5x")
 

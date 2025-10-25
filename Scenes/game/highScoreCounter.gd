@@ -10,4 +10,4 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Globals.highScore < Globals.score:
 		Globals.highScore = Globals.score
-	text = "highscore: " + str(Globals.highScore)
+	text = "Highscore: " + str(Globals.highScore)

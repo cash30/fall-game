@@ -10,6 +10,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if get_parent().get_parent().velocity.x > 0:
 		show()
-	else:
+	elif get_parent().get_parent().velocity.x < 0:
 		hide()
 	pass

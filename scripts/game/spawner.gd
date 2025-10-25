@@ -29,10 +29,10 @@ func _process(delta: float) -> void:
 	fallSpeedIncreaseTimer += 1 * delta
 	if fallSpeedIncreaseTimer >= 1:
 		print("increasing fall speed")
-		minFallSpeed += 10
-		maxFallSpeed += 10
+		minFallSpeed += 1
+		maxFallSpeed += 1
 		if timeBetweenLeaf > 0.1:
-			timeBetweenLeaf -= 0.01
+			timeBetweenLeaf -= 0.005
 		fallSpeedIncreaseTimer = 0
 		pass
 	pass

@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bufo2f10a4nr1"]
+
+[ext_resource type="Texture2D" uid="uid://b0rctapw7d2hw" path="res://art/sqrl.png" id="1_8ga2q"]
+[ext_resource type="Script" uid="uid://bjo1vu17333he" path="res://scenes/game/title.gd" id="1_cnipd"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 1.667
+anchor_bottom = 1.667
+offset_right = -768.38403
+offset_bottom = -432.21606
+script = ExtResource("1_cnipd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.5865332, 0.32466835, 0.0954221, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 187.0
+offset_bottom = 321.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.585062, 0.585062, 0.5850621, 1)
+theme_override_font_sizes/font_size = 80
+text = "Press anywhere to begin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sqrl" type="Sprite2D" parent="."]
+position = Vector2(577, 255)
+scale = Vector2(3.9, 3.9)
+texture = ExtResource("1_8ga2q")
